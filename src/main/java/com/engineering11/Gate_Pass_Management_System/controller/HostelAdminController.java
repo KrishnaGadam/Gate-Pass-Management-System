@@ -17,36 +17,43 @@ public class HostelAdminController {
     HostelAdminService hostelAdminService;
     @GetMapping("/getStudents")
     public List<Student> getAllStudents(){
+
         return hostelAdminService.findAll();
     }
 
     @PostMapping("/addStudent")
     public String addStudent(@RequestBody Student student){
+
         return hostelAdminService.addStudent(student);
     }
 
     @PostMapping
     public String addHostelAdmin(@RequestBody HostelAdmin hostelAdmin){
+
         return hostelAdminService.addHostelAdmin(hostelAdmin);
     }
 
     @GetMapping("/pendingApplication")
     public List<LeaveApplication> getPendingApplication(){
+
         return hostelAdminService.getPendingApplication();
     }
 
     @GetMapping("/approve/{id}")
     public String approveApplication(@PathVariable Long id){
+
         return hostelAdminService.changeStatus(id);
     }
 
     @GetMapping("/approvedApplication")
     public List<LeaveApplication> getApprovedApplication(){
+
         return hostelAdminService.getApprovedApplication();
     }
 
     @GetMapping("/allApplication")
     public List<LeaveApplication> getAllApplication(){
+
         return hostelAdminService.getAllApplication();
     }
 

@@ -22,6 +22,7 @@ public class StudentController {
     //add leave application
     @PostMapping("/addLeave")
     public String leaveRequest(@RequestBody LeaveApplication leaveApplication){
+
         return studentService.leaveRequest(leaveApplication);
     }
 
@@ -35,6 +36,7 @@ public class StudentController {
     //show all the application for particular student
     @GetMapping("/applications/{studentId}")
     public List<LeaveApplication> getApplications(@PathVariable Long studentId){
+
         return studentService.getApplications(studentId);
     }
 

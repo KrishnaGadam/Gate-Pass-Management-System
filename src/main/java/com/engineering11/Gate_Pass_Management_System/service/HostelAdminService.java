@@ -32,7 +32,7 @@ public class HostelAdminService {
     public String addStudent(Student student){
         try{
             studentRepository.save(student);
-            return "Successfully added user to Database";
+            return "Successfully added Student to Database";
         }catch (Exception e){
             log.error("Exception while adding student",e.getMessage());
         }
